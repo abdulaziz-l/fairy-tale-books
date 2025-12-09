@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: fairy-tale-books-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false  # Set this in Render dashboard
+      - key: JWT_SECRET
+        sync: false  # Set this in Render dashboard
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false  # Set this in Render dashboard
+      - key: TELEGRAM_CHAT_ID
+        sync: false  # Set this in Render dashboard
+      - key: ADMIN_PASSWORD
+        sync: false  # Set this in Render dashboard
+      - key: FRONTEND_URL
+        value: https://your-frontend-app.netlify.app
+    disk:
+      name: uploads
+      mountPath: /app/uploads
+      sizeGB: 5
