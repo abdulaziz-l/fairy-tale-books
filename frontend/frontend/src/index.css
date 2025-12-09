@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body text-gray-800 bg-cream;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(196, 181, 253, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 216, 184, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(134, 239, 172, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-warm-brown;
+  }
+
+  .story-text {
+    @apply font-story text-lg leading-relaxed;
+  }
+}
+
+@layer components {
+  .magic-button {
+    @apply bg-gradient-to-r from-lavender to-peach text-warm-brown font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:animate-glow;
+  }
+
+  .story-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-lavender/20;
+  }
+
+  .floating-element {
+    @apply animate-float;
+  }
+
+  .twinkle-star {
+    @apply animate-twinkle;
+  }
+
+  .hero-section {
+    @apply relative overflow-hidden bg-magic-gradient;
+  }
+
+  .magic-input {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-lavender/30 focus:border-lavender focus:outline-none focus:ring-2 focus:ring-lavender/20 transition-all duration-300 bg-white/90 backdrop-blur-sm;
+  }
+
+  .story-template-card {
+    @apply story-card p-6 cursor-pointer hover:scale-105 transition-transform duration-300;
+  }
+
+  .admin-table {
+    @apply w-full bg-white rounded-lg shadow-lg overflow-hidden;
+  }
+
+  .admin-table th {
+    @apply bg-lavender text-white font-semibold py-3 px-4 text-left;
+  }
+
+  .admin-table td {
+    @apply py-3 px-4 border-b border-lavender/20;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .status-ready {
+    @apply bg-green-100 text-green-800;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-story-purple to-magic-pink bg-clip-text text-transparent;
+  }
+
+  .magic-shadow {
+    box-shadow: 0 10px 25px rgba(196, 181, 253, 0.3);
+  }
+
+  .storybook-border {
+    border-image: linear-gradient(45deg, #8b4513, #d2691e, #8b4513) 1;
+  }
+}
